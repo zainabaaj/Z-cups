@@ -28,19 +28,25 @@ namespace ZCups
     }
     class Americano : Esspresso
     {
-        public Americano() { CoffeeType = "Americano"; }
+        public Americano() { CoffeeType = "Americano"; Description = CoffeeType; }
     }
     class Cappuccino : Esspresso
     {
-        public Cappuccino() { CoffeeType = "Cappuccino"; }
+        public Cappuccino() { CoffeeType = "Cappuccino"; Description = CoffeeType; }
     }
     class Caffe : Esspresso
     {
-        public Caffe() { CoffeeType = "Caffe"; }
+        public Caffe()
+        {
+            CoffeeType = "Caffe";
+            Description = CoffeeType;
+        }
+        public override string GetDescription() => Description;
+        
     }
     class WhiteChocolate : Esspresso
     {
-        public WhiteChocolate() { CoffeeType = "White Chocolate"; }
+        public WhiteChocolate() { CoffeeType = "White Chocolate"; Description = CoffeeType; }
     }
     class FilteredCoffee : Coffee
     {
@@ -51,11 +57,11 @@ namespace ZCups
     }
     class Brew : FilteredCoffee
     {
-        public Brew() { CoffeeType = "Brew"; }
+        public Brew() { CoffeeType = "Brew"; Description = CoffeeType; }
     }
     class Misto : FilteredCoffee
     {
-        public Misto() { CoffeeType = "Misto"; }
+        public Misto() { CoffeeType = "Misto"; Description = CoffeeType; }
     }
     class Frappuccino : Coffee
     {
@@ -66,65 +72,15 @@ namespace ZCups
     }
     class  ChocolateFrap : Frappuccino
     {
-        public ChocolateFrap() { CoffeeType = "Chocolate Frap"; }
+        public ChocolateFrap() { CoffeeType = "Chocolate Frap"; Description = CoffeeType; }
     }
     class StrawberryFrap : Frappuccino
     {
-        public StrawberryFrap() { CoffeeType = "Chocolate Frap"; }
+        public StrawberryFrap() { CoffeeType = "Strawberry Frap"; Description = CoffeeType; }
     }
     class VanillaFrap : Frappuccino
     {
-        public VanillaFrap() { CoffeeType = "Chocolate Frap"; }
+        public VanillaFrap() { CoffeeType = "Vanilla Frap"; Description = CoffeeType; }
     }
-    abstract class Decorator : Coffee
-    {
-        protected Coffee coffee;
-        public Decorator(Coffee coffee)
-        {
-            this.coffee = coffee;
-        }
-        public override double Cost() => coffee.Cost();
-        public override string GetDescription() => Description;
-        
 
-    }
-    class Milk: Decorator
-    {
-        public Milk(Coffee coffee) : base (coffee)
-        {
-            Description = "latte";
-        }
-        public override double Cost() => coffee.Cost() + 0.75;
-        public override string GetDescription() => $"{coffee.Description} {Description} ";
-        
-    }
-    class Ice : Decorator
-    {
-        public Ice(Coffee coffee): base(coffee)
-        {
-            Description = "Iced";
-        }
-        public override double Cost() => coffee.Cost() + 0.5;
-        public override string GetDescription() => $"{Description} {coffee.Description} ";
-
-    }
-    class Mocha : Decorator
-    {
-        public Mocha(Coffee coffee) : base(coffee)
-        {
-            Description = "Mocha";
-        }
-        public override double Cost() => coffee.Cost() + 1.25;
-        public override string GetDescription() => $"{coffee.Description} {Description} ";
-
-    }
-    class Caramel : Decorator
-    {
-        public Caramel(Coffee coffee) : base(coffee)
-        {
-            Description = "Caramel";
-        }
-        public override double Cost() => coffee.Cost() + 0.25;
-        public override string GetDescription() => $"{Description} {coffee.Description} ";
-    }
 }

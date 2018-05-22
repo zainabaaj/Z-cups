@@ -44,6 +44,7 @@
             this.BillTB = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.PriceLbl = new System.Windows.Forms.Label();
+            this.NewOrderBtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -172,6 +173,7 @@
             this.button1.TabIndex = 15;
             this.button1.Text = "Undo";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -182,6 +184,7 @@
             this.button2.TabIndex = 16;
             this.button2.Text = "Finish";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // BillTB
             // 
@@ -214,12 +217,25 @@
             this.PriceLbl.Text = "0 tl";
             this.PriceLbl.Visible = false;
             // 
+            // NewOrderBtn
+            // 
+            this.NewOrderBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewOrderBtn.Location = new System.Drawing.Point(230, 677);
+            this.NewOrderBtn.Name = "NewOrderBtn";
+            this.NewOrderBtn.Size = new System.Drawing.Size(150, 82);
+            this.NewOrderBtn.TabIndex = 20;
+            this.NewOrderBtn.Text = "New Order";
+            this.NewOrderBtn.UseVisualStyleBackColor = true;
+            this.NewOrderBtn.Visible = false;
+            this.NewOrderBtn.Click += new System.EventHandler(this.NewOrderBtn_Click);
+            // 
             // DrinkSelection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1182, 808);
+            this.Controls.Add(this.NewOrderBtn);
             this.Controls.Add(this.PriceLbl);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.BillTB);
@@ -258,9 +274,10 @@
         private System.Windows.Forms.Label DrinkNUmberLbl;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.RichTextBox BillTB;
+        private  System.Windows.Forms.RichTextBox BillTB;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label PriceLbl;
         private System.Windows.Forms.Label BranchLbl;
+        private System.Windows.Forms.Button NewOrderBtn;
     }
 }

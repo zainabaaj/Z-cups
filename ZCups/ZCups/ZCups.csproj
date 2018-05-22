@@ -46,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Coffee.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="Decorator.cs" />
     <Compile Include="DrinkSelection.cs">
       <SubType>Form</SubType>
     </Compile>
