@@ -13,6 +13,7 @@ namespace ZCups
     public partial class DrinkSelection : Form
     {
         public string Branch { get; set; }
+         Sube sube;
         
         public DrinkSelection()
         {
@@ -31,6 +32,75 @@ namespace ZCups
         {
             
             BranchLbl.Text = Branch;
+            if (Branch.Equals("Yalova"))
+            {
+                sube = new YalovaSube();
+            }
+            else sube = new BursaSube();
+
+            foreach(Esspresso o in sube.EsspressoType)
+            {
+                CoffeeSelectCB.Items.Add(o.ToString());
+            }
+            foreach (FilteredCoffee o in sube.FilteredCoffeeType)
+            {
+                CoffeeSelectCB.Items.Add(o.ToString());
+            }
+            foreach (Frappuccino o in sube.FrappuccinoType)
+            {
+                CoffeeSelectCB.Items.Add(o.ToString());
+            }
+
+        }
+
+        private void AddBeverageBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CoffeeSelectCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DecoratorCB.Items.Clear();
+            string o = CoffeeSelectCB.SelectedItem.ToString();
+            
+                if( o == "Americano")
+                {
+                    DecoratorCB.Items.Add("Iced");
+                }
+                else if ( o == "Caffe")
+                {
+                      DecoratorCB.Items.Add("Latte");
+                      DecoratorCB.Items.Add("Mocha");
+                   
+                }
+
+                else if (o == "White Chocolate")
+                {
+                      DecoratorCB.Items.Add("Iced");
+                      DecoratorCB.Items.Add("Mocha");
+
+                }
+
+                else if (o == "Filtered Coffee")
+                {
+                    DecoratorCB.Items.Add("Iced");
+                }
+                else if ( o == "Misto"|| o == "Brew")
+                {
+                    DecoratorCB.Items.Add("Latte");
+                    DecoratorCB.Items.Add("Iced");
+
+                }
+                                        
+                else if (o == "Frappuccino")
+                {
+                    DecoratorCB.Items.Add("Mocha");
+                    DecoratorCB.Items.Add("Caramel");
+
+                }
+               
+
+            
         }
     }
 }

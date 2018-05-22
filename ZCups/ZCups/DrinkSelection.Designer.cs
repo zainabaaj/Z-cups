@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BranchLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CoffeeSelectCB = new System.Windows.Forms.ComboBox();
@@ -43,7 +44,6 @@
             this.BillTB = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.PriceLbl = new System.Windows.Forms.Label();
-            this.BranchLbl = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1184, 127);
             this.panel2.TabIndex = 6;
+            // 
+            // BranchLbl
+            // 
+            this.BranchLbl.AutoSize = true;
+            this.BranchLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BranchLbl.ForeColor = System.Drawing.Color.White;
+            this.BranchLbl.Location = new System.Drawing.Point(778, 72);
+            this.BranchLbl.Name = "BranchLbl";
+            this.BranchLbl.Size = new System.Drawing.Size(111, 32);
+            this.BranchLbl.TabIndex = 20;
+            this.BranchLbl.Text = "Branch";
             // 
             // label1
             // 
@@ -86,6 +97,7 @@
             this.CoffeeSelectCB.Name = "CoffeeSelectCB";
             this.CoffeeSelectCB.Size = new System.Drawing.Size(195, 24);
             this.CoffeeSelectCB.TabIndex = 8;
+            this.CoffeeSelectCB.SelectedIndexChanged += new System.EventHandler(this.CoffeeSelectCB_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -127,6 +139,7 @@
             this.AddBeverageBtn.TabIndex = 12;
             this.AddBeverageBtn.Text = "+";
             this.AddBeverageBtn.UseVisualStyleBackColor = true;
+            this.AddBeverageBtn.Click += new System.EventHandler(this.AddBeverageBtn_Click);
             // 
             // label5
             // 
@@ -155,7 +168,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(58, 586);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 40);
+            this.button1.Size = new System.Drawing.Size(139, 40);
             this.button1.TabIndex = 15;
             this.button1.Text = "Undo";
             this.button1.UseVisualStyleBackColor = true;
@@ -200,17 +213,6 @@
             this.PriceLbl.TabIndex = 19;
             this.PriceLbl.Text = "0 tl";
             this.PriceLbl.Visible = false;
-            // 
-            // BranchLbl
-            // 
-            this.BranchLbl.AutoSize = true;
-            this.BranchLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BranchLbl.ForeColor = System.Drawing.Color.White;
-            this.BranchLbl.Location = new System.Drawing.Point(778, 72);
-            this.BranchLbl.Name = "BranchLbl";
-            this.BranchLbl.Size = new System.Drawing.Size(111, 32);
-            this.BranchLbl.TabIndex = 20;
-            this.BranchLbl.Text = "Branch";
             // 
             // DrinkSelection
             // 

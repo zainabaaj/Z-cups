@@ -46,7 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Coffee.cs" />
-    <Compile Include="coffee1.cs" />
     <Compile Include="DrinkSelection.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +60,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sube.cs" />
     <EmbeddedResource Include="DrinkSelection.resx">
       <DependentUpon>DrinkSelection.cs</DependentUpon>
     </EmbeddedResource>
