@@ -15,6 +15,7 @@ namespace ZCups
         public string Branch { get; set; }
         Coffee coffee;
          Sube sube;
+        static int id =0;
         public static double bill= 0.0;
         User user;
         
@@ -56,11 +57,11 @@ namespace ZCups
             {
                 CoffeeSelectCB.Items.Add(o.ToString());
             }
-
         }
 
         private void AddBeverageBtn_Click(object sender, EventArgs e)
         {
+            button2.Enabled = true; 
             switch (DecoratorCB.SelectedItem)
             {
                 case "Mocha":
@@ -152,6 +153,10 @@ namespace ZCups
 
         private void button2_Click(object sender, EventArgs e)
         {
+            singleton.Instance.Id.Add(id);
+            id++;
+            singleton.Instance.Price.Add(bill);
+            singleton.Instance.TotalPrice += bill;
             PriceLbl.Visible = true;
             PriceLbl.Text = $"{bill} tl";
             AddBeverageBtn.Enabled = false;
@@ -160,11 +165,13 @@ namespace ZCups
 
         private void NewOrderBtn_Click(object sender, EventArgs e)
         {
-            bill = 0.0;
+            bill = .0;
             DrinkSelection_Load( sender,  e);
             AddBeverageBtn.Enabled = true;
             NewOrderBtn.Visible = false;
             PriceLbl.Visible = false;
+            CoffeeSelectCB.ResetText();
+            DecoratorCB.ResetText();
         }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -182,6 +189,18 @@ namespace ZCups
         {
             user.Undo();
         }
-        public  void undo(string text) => BillTB.Text = text; 
+        public  void undo(string text) => BillTB.Text = text;
+
+        private void reportBtn_Click(object sender, EventArgs e)
+        {
+            BillTB.Text = "************************************************************ \n\n ";
+            BillTB.Text += $"                 Welcome To Z Cups  ({Branch})  \n\n";
+            BillTB.Text += "************************************************************ \n\n\n ";
+            foreach (var i in singleton.Instance.Id)
+            {
+                BillTB.Text += $"{singleton.Instance.Id[i]} : \t {singleton.Instance.Price[i]}\n";
+            }
+            PriceLbl.Text = $"{singleton.Instance.TotalPrice} tl";
+        }
     }
 }

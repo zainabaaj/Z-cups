@@ -45,6 +45,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.PriceLbl = new System.Windows.Forms.Label();
             this.NewOrderBtn = new System.Windows.Forms.Button();
+            this.reportBtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -169,7 +170,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(58, 586);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 40);
+            this.button1.Size = new System.Drawing.Size(150, 40);
             this.button1.TabIndex = 15;
             this.button1.Text = "Undo";
             this.button1.UseVisualStyleBackColor = true;
@@ -177,6 +178,7 @@
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(230, 586);
             this.button2.Name = "button2";
@@ -199,11 +201,11 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(688, 704);
+            this.label7.Location = new System.Drawing.Point(682, 704);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 32);
+            this.label7.Size = new System.Drawing.Size(101, 32);
             this.label7.TabIndex = 18;
-            this.label7.Text = "Price :";
+            this.label7.Text = "Total :";
             // 
             // PriceLbl
             // 
@@ -229,12 +231,24 @@
             this.NewOrderBtn.Visible = false;
             this.NewOrderBtn.Click += new System.EventHandler(this.NewOrderBtn_Click);
             // 
+            // reportBtn
+            // 
+            this.reportBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reportBtn.Location = new System.Drawing.Point(58, 677);
+            this.reportBtn.Name = "reportBtn";
+            this.reportBtn.Size = new System.Drawing.Size(150, 82);
+            this.reportBtn.TabIndex = 21;
+            this.reportBtn.Text = "Daily Report";
+            this.reportBtn.UseVisualStyleBackColor = true;
+            this.reportBtn.Click += new System.EventHandler(this.reportBtn_Click);
+            // 
             // DrinkSelection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1182, 808);
+            this.Controls.Add(this.reportBtn);
             this.Controls.Add(this.NewOrderBtn);
             this.Controls.Add(this.PriceLbl);
             this.Controls.Add(this.label7);
@@ -279,5 +293,6 @@
         private System.Windows.Forms.Label PriceLbl;
         private System.Windows.Forms.Label BranchLbl;
         private System.Windows.Forms.Button NewOrderBtn;
+        private System.Windows.Forms.Button reportBtn;
     }
 }

@@ -40,7 +40,6 @@ namespace ZCups
         {
             DrinkSelection ds = new DrinkSelection();
             ds.Branch = BursaSubesi.Text;
-            ds.Location = this.Location;
             ds.ShowDialog();
            
         }
