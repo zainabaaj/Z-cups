@@ -15,6 +15,7 @@ namespace ZCups
         public abstract Esspresso[] EsspressoTypes();
         public abstract FilteredCoffee[] FilteredCoffeeTypes();
         public abstract Frappuccino[] FrappuccinoTypes();
+        public abstract void update(object o, double raise);
     }
     class BursaSube : Sube
     {
@@ -26,17 +27,37 @@ namespace ZCups
         }
         public override Esspresso[] EsspressoTypes()
         {
-            return new Esspresso[] { (new Esspresso()), (new Americano()), (new Cappuccino()), (new Caffe()), (new WhiteChocolate()), };
+            Esspresso[] esspresso = new Esspresso[] { (new Esspresso()), (new Americano()), (new Cappuccino()), (new Caffe()), (new WhiteChocolate()), };
+            foreach (var o in esspresso)
+            {
+                singleton.Instance.BursaBeveragesTypes[o.ToString()] = true;
+            }
+            return esspresso;
         }
 
         public override FilteredCoffee[] FilteredCoffeeTypes()
         {
-            return new FilteredCoffee[] { (new FilteredCoffee()), (new Brew()), (new Misto()), };
+            FilteredCoffee[] filteredCoffee = new FilteredCoffee[] { (new FilteredCoffee()), (new Brew()), (new Misto()), };
+            foreach (var o in filteredCoffee)
+            {
+                singleton.Instance.BursaBeveragesTypes[o.ToString()] = true;
+            }
+            return filteredCoffee;
         }
 
         public override Frappuccino[] FrappuccinoTypes()
         {
-            return new Frappuccino[] { (new Frappuccino()), (new VanillaFrap()), (new ChocolateFrap()), (new StrawberryFrap()), };
+            Frappuccino[] frappuccino = new Frappuccino[] { (new Frappuccino()), (new VanillaFrap()), (new ChocolateFrap()), (new StrawberryFrap()), };
+            foreach (var o in frappuccino)
+            {
+                singleton.Instance.BursaBeveragesTypes[o.ToString()] = true;
+            }
+            return frappuccino;
+        }
+
+        public override void update(object o, double raise)
+        {
+           
         }
     }
     class YalovaSube : Sube
@@ -49,17 +70,37 @@ namespace ZCups
         }
         public override Esspresso[] EsspressoTypes()
         {
-            return new Esspresso[] { (new Esspresso()), (new Americano()), (new Cappuccino()), (new Caffe()),  };
+            Esspresso[] esspresso= new Esspresso[] { (new Esspresso()), (new Americano()), (new Cappuccino()), (new Caffe()),  };
+            foreach (var o in esspresso)
+            {
+                singleton.Instance.YalovaBeveragesTypes[o.ToString()] = true;
+             }
+            return esspresso;
         }
 
         public override FilteredCoffee[] FilteredCoffeeTypes()
         {
-            return new FilteredCoffee[] { (new FilteredCoffee()), };
+            FilteredCoffee[] filteredCoffee = new FilteredCoffee[] { (new FilteredCoffee()), };
+            foreach (var o in filteredCoffee)
+            {
+                singleton.Instance.YalovaBeveragesTypes[o.ToString()] = true;
+            }
+            return filteredCoffee;
         }
 
         public override Frappuccino[] FrappuccinoTypes()
         {
-            return new Frappuccino[] { (new Frappuccino()), (new VanillaFrap()), (new ChocolateFrap()), (new StrawberryFrap()), };
+            Frappuccino[] frappuccino = new Frappuccino[] { (new Frappuccino()), (new VanillaFrap()), (new ChocolateFrap()), (new StrawberryFrap()), };
+            foreach (var o in frappuccino)
+            {
+                singleton.Instance.YalovaBeveragesTypes[o.ToString()] = true;
+            }
+            return frappuccino;
+        }
+
+        public override void update(object o, double raise)
+        {
+            throw new NotImplementedException();
         }
     }
 }

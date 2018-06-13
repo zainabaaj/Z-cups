@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace ZCups
 {
+    public static class Globals
+    {
+        public static string Branch;
+    }
     public partial class Form1 : Form
     {
         public Form1()
@@ -30,8 +34,7 @@ namespace ZCups
         private void YalovaSube_Click(object sender, EventArgs e)
         {
             DrinkSelection ds = new DrinkSelection();
-            ds.Branch = YalovaSube.Text;
-            ds.Location = this.Location;
+            Globals.Branch = YalovaSube.Text;
             ds.ShowDialog();
             
         }
@@ -39,9 +42,14 @@ namespace ZCups
         private void BursaSubesi_Click(object sender, EventArgs e)
         {
             DrinkSelection ds = new DrinkSelection();
-            ds.Branch = BursaSubesi.Text;
+            Globals.Branch = BursaSubesi.Text;
             ds.ShowDialog();
            
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
         }
     }
 }

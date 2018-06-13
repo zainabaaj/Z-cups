@@ -12,7 +12,6 @@ namespace ZCups
 {
     public partial class DrinkSelection : Form
     {
-        public string Branch { get; set; }
         Coffee coffee;
          Sube sube;
         static int id =0;
@@ -35,14 +34,14 @@ namespace ZCups
         private void DrinkSelection_Load(object sender, EventArgs e)
         {
             user = new User();
-            BranchLbl.Text = Branch;
-            if (Branch.Equals("Yalova"))
+            BranchLbl.Text = Globals.Branch;
+            if (Globals.Branch.Equals("Yalova"))
             {
                 sube = new YalovaSube();
             }
             else sube = new BursaSube();
             BillTB.Text = "************************************************************ \n\n ";
-            BillTB.Text += $"                 Welcome To Z Cups  ({Branch})  \n\n";
+            BillTB.Text += $"                 Welcome To Z Cups  ({Globals.Branch})  \n\n";
             BillTB.Text += "************************************************************ \n\n\n ";
 
             foreach (Esspresso o in sube.EsspressoType)
@@ -194,13 +193,24 @@ namespace ZCups
         private void reportBtn_Click(object sender, EventArgs e)
         {
             BillTB.Text = "************************************************************ \n\n ";
-            BillTB.Text += $"                 Welcome To Z Cups  ({Branch})  \n\n";
+            BillTB.Text += $"                 Welcome To Z Cups  ({Globals.Branch})  \n\n";
             BillTB.Text += "************************************************************ \n\n\n ";
             foreach (var i in singleton.Instance.Id)
             {
                 BillTB.Text += $"{singleton.Instance.Id[i]} : \t {singleton.Instance.Price[i]}\n";
             }
             PriceLbl.Text = $"{singleton.Instance.TotalPrice} tl";
+        }
+
+        private void DrinkSelection_FormClosed(object sender, FormClosedEventArgs e)
+        {
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AdminEntry ae = new AdminEntry();
+            ae.Show();
+           
         }
     }
 }

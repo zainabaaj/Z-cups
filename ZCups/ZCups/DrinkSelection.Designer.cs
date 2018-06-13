@@ -46,6 +46,7 @@
             this.PriceLbl = new System.Windows.Forms.Label();
             this.NewOrderBtn = new System.Windows.Forms.Button();
             this.reportBtn = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -190,9 +191,9 @@
             // 
             // BillTB
             // 
-            this.BillTB.Location = new System.Drawing.Point(688, 209);
+            this.BillTB.Location = new System.Drawing.Point(688, 252);
             this.BillTB.Name = "BillTB";
-            this.BillTB.Size = new System.Drawing.Size(329, 476);
+            this.BillTB.Size = new System.Drawing.Size(329, 433);
             this.BillTB.TabIndex = 17;
             this.BillTB.Text = "";
             // 
@@ -242,12 +243,24 @@
             this.reportBtn.UseVisualStyleBackColor = true;
             this.reportBtn.Click += new System.EventHandler(this.reportBtn_Click);
             // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(1041, 154);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(106, 58);
+            this.button3.TabIndex = 22;
+            this.button3.Text = "Login";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // DrinkSelection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1182, 808);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.reportBtn);
             this.Controls.Add(this.NewOrderBtn);
             this.Controls.Add(this.PriceLbl);
@@ -266,6 +279,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "DrinkSelection";
             this.Text = "DrinkSelection";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DrinkSelection_FormClosed);
             this.Load += new System.EventHandler(this.DrinkSelection_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -294,5 +308,6 @@
         private System.Windows.Forms.Label BranchLbl;
         private System.Windows.Forms.Button NewOrderBtn;
         private System.Windows.Forms.Button reportBtn;
+        private System.Windows.Forms.Button button3;
     }
 }
