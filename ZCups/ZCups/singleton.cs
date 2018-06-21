@@ -10,6 +10,9 @@ namespace ZCups
     {
         public List<int> Id { get; set; }
         public double TotalPrice = .0;
+        public double EsspressoCost = .0;
+        public double FilteredCost = .0;
+        public double FrapCost = .0;
         public List<double> Price { get; set; }
         public Dictionary<string, string> YalovaAdmins;
         public Dictionary<string, string> BursaAdmins;

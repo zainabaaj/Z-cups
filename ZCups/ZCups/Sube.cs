@@ -28,9 +28,25 @@ namespace ZCups
         public abstract void DeleteBeverage(string beverage);
         public void update(double raise)
         {
+
             foreach (Coffee c in RaisedCoffee)
             {
-                c.CoffeeCost = c.Cost()+ raise;
+                if(c.GetType() == typeof(Esspresso))
+                {
+                    singleton.Instance.EsspressoCost = raise;
+
+                }
+                if (c.GetType() == typeof(FilteredCoffee))
+                {
+                    singleton.Instance.FilteredCost = raise;
+
+                }
+                if (c.GetType() == typeof(Frappuccino))
+                {
+                    singleton.Instance.FrapCost = raise;
+
+                }
+                
             }
         }
         
