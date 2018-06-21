@@ -34,16 +34,16 @@ namespace ZCups
 
         private void YalovaSube_Click(object sender, EventArgs e)
         {
-            DrinkSelection ds = new DrinkSelection();
             Globals.Branch = YalovaSube.Text;
+            DrinkSelection ds = new DrinkSelection();
             ds.ShowDialog();
             
         }
 
         private void BursaSubesi_Click(object sender, EventArgs e)
         {
-            DrinkSelection ds = new DrinkSelection();
             Globals.Branch = BursaSubesi.Text;
+            DrinkSelection ds = new DrinkSelection();
             ds.ShowDialog();
            
         }

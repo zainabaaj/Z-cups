@@ -22,7 +22,7 @@ namespace ZCups
         
         public Esspresso() { Description = "Esspresso"; CoffeeType = Description; }
 
-        public override double Cost() => CoffeeCost = 5.0;
+        public override double Cost() => CoffeeCost += 5.0;
 
         public override string GetDescription() => Description;
        
@@ -53,7 +53,7 @@ namespace ZCups
     {
         
         public FilteredCoffee() { Description = "Filtered Coffee"; CoffeeType = Description; }
-        public override double Cost() => CoffeeCost = 7.0;
+        public override double Cost() => CoffeeCost += 7.0;
         public override string GetDescription() => Description;
     }
     class Brew : FilteredCoffee
@@ -67,7 +67,7 @@ namespace ZCups
     class Frappuccino : Coffee
     {
         public Frappuccino() { Description = "Frappuccino"; CoffeeType = Description; }
-        public override double Cost() =>CoffeeCost = 6.5;
+        public override double Cost() =>CoffeeCost += 6.5;
         public override string GetDescription() => Description;
         
     }

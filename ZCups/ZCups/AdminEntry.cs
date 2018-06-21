@@ -16,7 +16,7 @@ namespace ZCups
         {
             InitializeComponent();
         }
-
+        
         private void EnterBtn_Click(object sender, EventArgs e)
         {
             if(Globals.Branch == "Yalova")

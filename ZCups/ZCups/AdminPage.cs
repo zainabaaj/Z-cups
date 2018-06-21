@@ -22,8 +22,8 @@ namespace ZCups
         {
             string added = "";
             string deleted = "";
-            if (AddBeverageCB.SelectedItem.ToString() != null) added = AddBeverageCB.ToString();
-            if (DeleteBeverageCB.SelectedItem.ToString() != null) deleted = DeleteBeverageCB.ToString();
+            if (AddBeverageCB.SelectedItem != null) added = AddBeverageCB.SelectedItem.ToString();
+            if (DeleteBeverageCB.SelectedItem != null) deleted = DeleteBeverageCB.SelectedItem.ToString();
             List<Coffee> raisedCoffee = new List<Coffee>();
             if(EsspressoChB.Checked == true)
             {
@@ -43,7 +43,7 @@ namespace ZCups
                 ys.RegisterRaisedCoffee(raisedCoffee);
                 ys.TemplateMethod(added, deleted, (double)RaiseUD.Value);
                 this.Close();
-                DrinkSelection ds = new DrinkSelection();
+                DrinkSelection ds = new DrinkSelection(ys);
                 ds.ShowDialog();
             }
             else if (Globals.Branch== "Bursa")
@@ -52,8 +52,9 @@ namespace ZCups
                 bs.RegisterRaisedCoffee(raisedCoffee);
                 bs.TemplateMethod(added, deleted, (double)RaiseUD.Value);
                 this.Close();
-                DrinkSelection ds = new DrinkSelection();
+                DrinkSelection ds = new DrinkSelection(bs);
                 ds.ShowDialog();
+
             }
 
         }
@@ -98,5 +99,6 @@ namespace ZCups
         {
 
         }
+        
     }
 }

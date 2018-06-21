@@ -21,25 +21,35 @@ namespace ZCups
         public DrinkSelection()
         {
             InitializeComponent();
-            
+            if (sube == null)
+            {
+                if (Globals.Branch.Equals("Yalova"))
+                {
+                    sube = new YalovaSube();
+                }
+                else sube = new BursaSube();
+
+            }
 
         }
-        
-        
+        public DrinkSelection(object sube)
+        {
+            InitializeComponent();
+            this.sube = (Sube)sube;
+
+        }
+
+
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void DrinkSelection_Load(object sender, EventArgs e)
+        public void DrinkSelection_Load(object sender, EventArgs e)
         {
             user = new User();
             BranchLbl.Text = Globals.Branch;
-            if (Globals.Branch.Equals("Yalova"))
-            {
-                sube = new YalovaSube();
-            }
-            else sube = new BursaSube();
+            
             BillTB.Text = "************************************************************ \n\n ";
             BillTB.Text += $"                 Welcome To Z Cups  ({Globals.Branch})  \n\n";
             BillTB.Text += "************************************************************ \n\n\n ";
@@ -209,8 +219,10 @@ namespace ZCups
         private void button3_Click(object sender, EventArgs e)
         {
             AdminEntry ae = new AdminEntry();
+            this.Close();
             ae.Show();
            
         }
+        
     }
 }

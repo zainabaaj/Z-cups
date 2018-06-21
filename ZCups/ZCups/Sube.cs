@@ -30,7 +30,7 @@ namespace ZCups
         {
             foreach (Coffee c in RaisedCoffee)
             {
-                c.CoffeeCost = c.CoffeeCost + raise;
+                c.CoffeeCost = c.Cost()+ raise;
             }
         }
         
