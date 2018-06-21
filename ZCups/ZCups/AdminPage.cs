@@ -20,6 +20,41 @@ namespace ZCups
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+            string added = "";
+            string deleted = "";
+            if (AddBeverageCB.SelectedItem.ToString() != null) added = AddBeverageCB.ToString();
+            if (DeleteBeverageCB.SelectedItem.ToString() != null) deleted = DeleteBeverageCB.ToString();
+            List<Coffee> raisedCoffee = new List<Coffee>();
+            if(EsspressoChB.Checked == true)
+            {
+                raisedCoffee.Add(new Esspresso());
+            }
+            if (FilteredCoffeeChB.Checked == true)
+            {
+                raisedCoffee.Add(new FilteredCoffee());
+            }
+            if(FrappuccinoChB.Checked == true)
+            {
+                raisedCoffee.Add(new Frappuccino());
+            }
+            if (Globals.Branch== "Yalova")
+            {
+                YalovaSube ys = new YalovaSube();
+                ys.RegisterRaisedCoffee(raisedCoffee);
+                ys.TemplateMethod(added, deleted, (double)RaiseUD.Value);
+                this.Close();
+                DrinkSelection ds = new DrinkSelection();
+                ds.ShowDialog();
+            }
+            else if (Globals.Branch== "Bursa")
+            {
+                BursaSube bs = new BursaSube();
+                bs.RegisterRaisedCoffee(raisedCoffee);
+                bs.TemplateMethod(added, deleted, (double)RaiseUD.Value);
+                this.Close();
+                DrinkSelection ds = new DrinkSelection();
+                ds.ShowDialog();
+            }
 
         }
 

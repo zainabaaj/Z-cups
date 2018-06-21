@@ -13,6 +13,7 @@ namespace ZCups
     public static class Globals
     {
         public static string Branch;
+
     }
     public partial class Form1 : Form
     {
